@@ -1,0 +1,37 @@
+Interfacing with SIM Card using a GSM modem
+-------------------------------------------
+
+Getting the Kc
+--------------
+
+If the serial interface is exposed on the modem. we can use the below AT command
+
+	AT + CRSM = 176, 20256, 0, 0, 9
+
+	The AT+CRSM provides restricted access to the SIM
+
+	HUAWEI E303 RESPONE -> 144,0,"AE7A7E8D038F8B1107"
+
+Channel Assignment Procedure
+----------------------------
+
+1. The BTS sends a Paging Request to the phone
+2. The phone sends a Channel Request to the BTS
+3. The BTS sends an Immediate Assignment to the phone
+4. Communication continues on dedicated channel
+
+( skip the 1st step when sending )
+
+
+
+Dehoping traffic and exporting the bursts
+-----------------------------------------
+
+grgsm_decode -b /tmp/bursts -t 1 -m SDCCH8
+
+-> if you see a Ciphering Mode Command message you've successfully de-hoped the traffic.
+
+Decrypting
+----------
+
+grgsm_decode -b /tmp/bursts -t 1 -m SDCCH8

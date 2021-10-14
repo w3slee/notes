@@ -1,0 +1,141 @@
+-----------------
+IoT Hacking Tools
+-----------------
+
+--------------
+Tools Category
+--------------
+
+
+Firmware Tools
+--------------
+Tools that can analyze firmware images, disassemble images and attach to firmware
+processes during runtime.
+
+	+ Binwalk
+	+ Radare2
+	+ Qemu
+	+ GDB
+	+ Angr
+	+ Firmwalker
+	+ Firmdyne
+	+ Firmware-mod-toolkit
+	+ Firmware-analysis-toolkit
+	+ Binary Analysis Tool (BAT)
+	+ Ghidra
+	+ IDA Pro
+
+
+Web Application Testing Tools
+-----------------------------
+Most common is :
+	+ Burp Suite
+	+ OWASP Zed Attack Proxy (ZAP)
+
+Others:
+	+ REST Easy Firefox Plugin
+	+ Postman Chrome Extension
+
+
+Mobile App Testing Tools
+------------------------
+
+	Android Testing Virtual Machine Distribution
+
+	+ Genymotion
+	+ Android SDK
+	+ Android Emulator
+
+	----
+	+ Enjarify
+	+ JD-GUI
+	+ MobSF
+	+ SQLite Browser
+	+ Burp Suite
+	+ OWASP ZAP
+
+
+	iOS
+	---
+	iOS testing tools are unique in that an OS X computer and a jailbroken iDevice
+	are required for testing.
+
+	OS X Computer
+	-------------
+	Listed below are SW tools that are to be installed on your host computer for testing and/or assessing iOS applications
+
+	+ idb
+	+ Xcode tools
+	+ Class-dump
+	+ Hopper (optional)
+	+ MobSF
+	+ SQLite browser
+	+ Burp Suite
+	+ OWASP ZAP
+
+
+	Jailbroken iDevice
+	------------------
+	+ Cydia
+	+ openURL
+	+ DumpDecrypted
+	+ iPainstaller
+	+ SSL Kill Switch 2
+	+ Clutch2
+	+ Cycript
+
+
+HARDWARE TOOLS
+---------------
+
+Required tools needed for disassembling devices, finding ground and accessing device interfaces
+
+	+ Multimeters
+
+	+ iFixit classic pro tech toolkit for hardware disassembly
+
+	+ Bus Pirate
+
+	+ USB to serial adapters
+		- Shikra, FTDI FT232, CP2102, PL2303, AdaFruit FTDI Friend
+
+	+ JTAG Adapters
+		- Shikra, JTAGulator, Arduino with JTAGenum, JLINK, Bus Blaster
+
+	+ Logic Analyser (optional)
+		- Saleae Logic or others
+
+Hardware Analysis Software
+--------------------------
+	+ OpenOCD
+	+ Spiflash
+	+ Minicom
+	+ Baudrate
+
+
+
+Radio Analyis Tools
+-------------------
+In order to sniff wireless technology, certain wireless chipsets are required.
+
+HARDWARE
+--------
+	+ Yardstick One
+	+ Ubertooth
+	+ Atmel RZ Raven USB (KillerBee framework)
+	+ HackRF One
+	+ BLe adapter
+	+ Attify Badge
+
+SOFTWARE
+--------
+	+ KillerBee Framework
+	+ Attify ZigBee Framework
+	+ GNU Radio
+	+ BLEAH
+	+ GQRX
+	+ Ubertooth tools
+	+ Blue Hydra
+	+ RTL-SDR
+	+ HackRF packages
+	+ EZ-Wave

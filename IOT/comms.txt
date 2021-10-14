@@ -1,0 +1,8 @@
+
+- The communication between browsers, embedded servers and web app servers is
+  done through a web service such as Simple Object Access Protocol ( SOAP ) / XML
+  or an API which is based on Representational State Transfer ( REST ) over HTTP/HTTPS
+
+- In order to view SOAP or REST requests, a man-in-the-middle proxy is required to view all
+  requests made from the browser and the mobile application to the application's web backend
+  infrastruture.

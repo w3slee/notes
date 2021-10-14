@@ -1,0 +1,97 @@
+-------------------
+ IOT DEVICE HACKING
+-------------------
+
+- Firmware is a sofrware that is written to a hardware adevice in order to ocontrol
+  user applications and various system functions
+
+- Firmware contains flash contents, the bootloader, the kernel and a root filesystem.
+
+X------------------------------------------------------X
+
+	-------------------------------------------
+	|		BOOTLOADER	          |
+	-------------------------------------------
+	|					  |
+	|		KERNEL			  |
+	|					  |
+	-------------------------------------------
+	|					  |
+	|		Root Filesystem		  |
+	|					  |
+	-------------------------------------------
+
+X-----------------------------------------------------X
+
+1. Bootloader
+   ----------
+
+      - It is responsible in initializing RAM for volatile data storage,
+	serial port(s), detect machine type, set kernel tagged list, load
+	initramfs(initial RAM filesystem) and call the kernel image.
+
+      - The bootloader initializes hardware drivers via a Board Support Package (BSP)
+	usually developed by a third party.
+
+      - The bootloader resides on a separate Electrically Erasable Programmable Read-only
+	Memory ( EEPROM ) or flash storage which is more common.
+
+      - Common bootloaders for ARM and MIPS architecture are :
+				+ Redboot
+				+ u-boot
+				+ barebox
+      - Once the bootloader starts up the kernel, the filesystem
+	( eg. SquashFS, cramFS, JFFS2, YAFFS2 and ext2 ) is loaded.
+
+2. Filesystem
+   ----------
+
+      - Contains configuration files, services, account passwords, hashes and application
+	code as well as startup scripts.
+
+      - Device specific code written in C/C++ or any other language resides in the FS.
+
+      - Device FW can be a mix of third-party devs contracted out, known as Original Design
+	  Manufacturers (ODM) or in-house developers working with the Original Equipment Manufacturer.
+
+      - There are many types of file compression utilized for f/w images, such as LZMA,
+	  .gzip, .zip, .zlip and .arj.
+
+3. Web Applications
+   ----------------
+      - Contain frontend HTML, JavaScript, backend web server an application server and database.
+
+      - There are two different models of web applications being utilized within the IoT space ,
+
+		+  Hybrid Cloud Model
+		   ------------------
+		   The hybrid model is a mix of the vendor or manufacturer providing
+		   Software as a Service (SaaS) web application(s) and also connecting
+		   the embedded device's web application running off of the firmware.
+
+		   The data is then synced from the manufacturer's cloud with the embedded
+		   device on the device's local network.
+
+
+			IOT1	<----
+
+			IOT2	<----
+				  +
+				----------> WEB -> CLOUD <---> OEM SaaS1 <--> OEM SaaS2 <--> OEM SaaS3
+				  +
+			IOT3	<----
+
+			IOT4	<----
+
+
+
+		+  Embedded Server Standalone model
+		   --------------------------------
+		   Embedded device web applications are, as mentioned, running internally
+		   off the device's firmware utilizing an embedded web server such as
+		   lighttpd or nginx with no outside dependencies.
+
+
+- Quite often, input is sent directly to the device firmware ( Printers / VoIP phones / Home Routers )
+  and if user input is not validated or sanitized, attackers can perform arbitrary command execution
+  within the devices context.

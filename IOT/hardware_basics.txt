@@ -1,0 +1,70 @@
+
+- Device H/W starts with the Printed Circuit Board (PCB), which is comprised of fiberglass,
+  copper, the solder mask , silkscreen , traces and pads.
+
+- Components such as resistors , capacitors, chips for Wi-Fi, EEPROMs and serial
+  and microcontrollers are soldered onto the PCB.
+
+- Components of interest include sources of input into the device firmware either
+  directly or indirectly such as :
+  		+ EEPROM
+		+ NAND flash
+		+ Universal Asynchronous Receiver/Transmitter (UART) and Joint
+		  Test Action Group (JTAG)
+  are some of the most common components to focus on for testing purposes.
+
+
+---------------
+HARDWARE INPUTS
+---------------
+
+--------
+ EEPROM
+--------
+
+- The EEPROM is a non-volatile storage location which is read and writable as single blocks of bytes.
+
+- The EEPROM can be erased by electrical charges or UV exposure.
+
+- Similar to other flash storage types, EEPROM allows a limited number of write cycles. EEPROM is a
+  chip of interest as firmware may be loaded on an EEPROM and can be removed from PCB to an EEPROM
+  reader for further analysis.
+
+-------
+ NAND
+-------
+
+- NAND flash memory is written and read in blocks, commonly found in USB drives but also in IoT
+  devices as well as game consoles.
+- The NAND flash typically contains a device's bootloader which follows various instructions to start
+  the operating system and can be manipulated;
+
+-------
+ UART
+-------
+
+- UART is one of the most common ways to gain access to devices. Manufacturers use UART for diag, log
+  messages and as a debug console for verifying configs when deploying devices which makes it one of
+  the most common sources of input in firmware.
+
+- Sometimes root access is granted upon connection but sometimes access is pass protected which adds
+  extra time for brute-forcing.
+
+- UART contains about eight data lines with control pins and also has 2 serial wires which are the
+  RECEIVE data and TRANSMIT data wires ( RX/TX ). No external clock is needed for UART.
+
+- UART pinouts on the PCB are TX, RX, Vcc ( voltage ) and GND ( ground )
+
+
+- JTAG is another serial comm created for chip-and-system level testing, firmware can be dumped
+  or upgraded using JTAG.
+- It provides direct interface to hardware on the board which means it can access devices connected
+  to it, such as flash or RAM.
+
+- There is a TDI ( DATA IN ), TDO  ( DATA OUT ), TMS ( TEST MODE SELECT ), TCK ( TEST CLOCK ) and TRST
+  ( TEST RESET )
+
+- There is the ability to password protect JTAG access, but the BYPASS mode should still work.
+
+- JTAG connects to an on-chip test access port (TAP) which regulates a state when accessing registers
+  on chips. Similar to UART, manufacturers may obfuscate header pins or traces.
